@@ -5,14 +5,28 @@
 import React, {Component} from 'react';
 import api from '../../services/api';
 import "./styles.css";
-import main from '../main/index';
 import {Link} from 'react-router-dom';
 
 
 export default class User extends Component{
   state = {
-       user:{},
+       user:{
+        id : 0,
+        name: 0,
+        username: 0,
+        email: 0,
+        address: {
+            street: 0,
+            city: 0,
+            suite: 0,
+            zipcode: 0,
+            geo: {
+              lat: 0 ,
+              lng: 0,
+            } 
+       }
                
+         }
          }
 
   async componentDidMount( ) {
@@ -20,17 +34,14 @@ export default class User extends Component{
 
     const response = await api.get(`/users/${id}`);
 
-    const { data, ...info} = response;
+    const { data} = response;
   
 
-    this.setState({ user: data,info});
+    this.setState({ user: data});
 
 
 
   }
-
- 
-    
     
     render() {
 
@@ -43,8 +54,14 @@ export default class User extends Component{
              <p>Nick: {user.username}</p>
              <p>Email {user.email}</p> 
              <p>Telefone: {user.phone}</p>
-             
-             { /* <p>{user.address { {street}, {suite}, {city} ,{zipcode} } </p> */ }              
+             <p>Street: {user.address.street}</p>
+             <p>City: {user.address.city}</p>
+             <p>Suite: {user.address.suite}</p>
+             <p>Zipcode: {user.address.zipcode}</p>
+             <p>Lat: {user.address.geo.lat}</p>
+             <p>Lng: {user.address.geo.lng}</p>
+           
+                 
            <p>
                WebSite: <a href={user.website}>{user.website}</a>
            </p>
@@ -53,7 +70,7 @@ export default class User extends Component{
            </div>
         
            </div>
-           /* Botao de retornar aqui*/
+         
         )
        }
 
