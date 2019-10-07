@@ -1,14 +1,16 @@
 #main-header{
     height: 60px;
     width: 100%;
-    background: #da552f;
-    font-size: 18px;
+   background-color: #111; 
+    font-size: 30px;
     font-weight: bold;
-    color: rgb(48, 34, 177);
+    color: #dc5800;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: -2px -0.5px black;
+    text-shadow: 2px 2px #111111;
+    background-image: -webkit-linear-gradient( rgba(0, 0, 255, 0.616),rgba(128, 0, 128, 0.527) );
+    /* #fc4a1a */ /* #f7b733 */
 
     /* text-shadow: esquerda-direita / cima-baixo /cor */
   

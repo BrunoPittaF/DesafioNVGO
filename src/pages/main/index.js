@@ -13,7 +13,7 @@ export default class main extends Component {
 state = {
     //aqui vem as informações de cada heroi/etc
     users: [],
-   
+      
   }
   
   
@@ -24,10 +24,10 @@ state = {
   loadPerson = async () => {
     const response = await api.get('/users');
 
-    //const {id} = response.data;
-
+    
     this.setState({users : response.data});
   };
+
 
 
   render() {
@@ -48,7 +48,7 @@ state = {
         <Link to={`/users/${user.id}`}>Acessar</Link>
         </article>     
         ) )}
-
+      
       </div>
     )
   
