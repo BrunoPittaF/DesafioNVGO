@@ -13,6 +13,7 @@ export default class main extends Component {
 state = {
     //aqui vem as informações de cada heroi/etc
     users: [],
+    posts: [],
       
   }
   
@@ -22,34 +23,43 @@ state = {
   }
 
   loadPerson = async () => {
-    const response = await api.get('/users');
+    const response = await api.get(`/users`);
+    
 
     
     this.setState({users : response.data});
+    this.setState({posts: response.data });
   };
 
 
 
   render() {
 
-    const { users} = this.state;
+    const { users, posts} = this.state;
     
    
 
     return (
-      
-      <div className='user-list'>
-         <h1>Página de Usuários</h1>
+            <div className='user-list'>
+         <h1>Página de Usuários</h1> <br></br>
         {users.map (user => (
           <article key={user.id}>
         <strong>{user.name}</strong>
-        <p>{user.username}</p>
+        <p>{user.id}</p>
         <p>{user.email}</p>
         <Link to={`/users/${user.id}`}>Acessar</Link>
-        </article>     
-        ) )}
-      
+       
+        
+        </article> 
+            
+        ) )}        
+        <div className="Botao" > 
+        <Link to={`/posts`}>Página de Postagem</Link> 
+        </div>            
       </div>
+       
+     
+      
     )
   
   

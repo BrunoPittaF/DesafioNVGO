@@ -51,13 +51,8 @@ h1{
     color: #FFF;
 }
 
-.user-list .actions{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
 
-.user-list .actions button{
+.user-list .Botao{
     padding: 10px;
     border-radius: 5px;
     border: 0px;
@@ -68,8 +63,5 @@ h1{
     cursor: pointer;
 }
 
-.user-list .actions button:hover {
-    opacity: 0.7; 
-}
 
 

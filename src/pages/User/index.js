@@ -1,7 +1,4 @@
-//Aqui vem os detalhes de cada herói  a tela personalizada dele e etc
-// # = ID
-//. = Class
-
+//Página de cada Usuário individualmente
 import React, {Component} from 'react';
 import api from '../../services/api';
 import "./styles.css";
@@ -42,6 +39,7 @@ export default class User extends Component{
 
 
   }
+
     
     render() {
 
@@ -49,26 +47,22 @@ export default class User extends Component{
        return (
            
            <div className="user-info">
-             <h1>Nome: {user.name}</h1>
-             <p>ID:{user.id}</p>
-             <p>Nick: {user.username}</p>
-             <p>Email {user.email}</p> 
-             <p>Telefone: {user.phone}</p>
-             <p>Street: {user.address.street}</p>
-             <p>City: {user.address.city}</p>
-             <p>Suite: {user.address.suite}</p>
-             <p>Zipcode: {user.address.zipcode}</p>
-             <p>Lat: {user.address.geo.lat}</p>
-             <p>Lng: {user.address.geo.lng}</p>
-           
-                 
-           <p>
-               WebSite: <a href={user.website}>{user.website}</a>
-           </p>
+             <h1>{user.name}</h1>
+             <p>ID:<a>{user.id}</a></p> <br></br>
+             <p>Nick:<a>{user.username}</a></p><br></br>
+             <p>Email:<a>{user.email}</a></p> <br></br>
+             <p>Telefone:<a>{user.phone}</a></p><br></br>
+             <p>Street:<a>{user.address.street}</a></p><br></br>
+             <p>City:<a>{user.address.city}</a></p><br></br>
+             <p>Suite:<a>{user.address.suite} </a></p><br></br>
+             <p>Zipcode:<a>{user.address.zipcode}</a></p><br></br>
+             <p>Lat:<a>{user.address.geo.lat}</a></p><br></br>
+             <p>Lng:<a>{user.address.geo.lng}</a></p><br></br>
+             <p>WebSite: <a href={user.website}>{user.website}</a></p><br></br>
            <div className="Botao">
-             <Link className="Voltar" to={`../`}>Retornar</Link>
+             <Link to={`../`}>Retornar</Link>
            </div>
-        
+                   
            </div>
          
         )
